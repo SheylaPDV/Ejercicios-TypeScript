@@ -10,9 +10,15 @@ const nombre: string = "Sheyla";
 console.log(mi_variable, numero, verdadero);
 // Arrays
 let personas: string[] = ["Paco", "Peepe", "Shey"];
+
 let div_personas: HTMLElement | null = document.querySelector("#personas");
-div_personas.innerHTML = "<ul>";
-personas.map((persona) => {
-  div_personas.innerHTML += `<li>${persona}</li>`;
-});
-div_personas.innerHTML += "</ul>";
+
+div_personas.innerHTML =
+  "<ul>" +
+  personas
+    .map((persona) => {
+      return `<li>${persona}</li>`;
+    })
+    .join("");
+
+("</ul>");
